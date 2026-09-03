@@ -1,4 +1,4 @@
-package com.sg.foundations.utils.utils;
+package com.sg.foundations.utils;
 
 import java.util.Scanner;
 

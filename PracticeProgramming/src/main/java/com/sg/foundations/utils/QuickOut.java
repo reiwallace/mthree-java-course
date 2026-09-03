@@ -1,4 +1,4 @@
-package com.sg.foundations.utils.utils;
+package com.sg.foundations.utils;
 
 public class QuickOut {
     /**
@@ -8,4 +8,6 @@ public class QuickOut {
     public static void println(String line) {
         System.out.println(line);
     }
+
+    public static void print(String text) { System.out.print(text); }
 }
