@@ -1,6 +1,6 @@
 package com.sg.foundations.flowcontrol.ifs;
 
-import com.sg.foundations.flowcontrol.utils.UserInputUtils;
+import com.sg.foundations.utils.utils.UserInputUtils;
 import java.util.Scanner;
 
 public class YourLifeInMovies {

@@ -1,4 +1,4 @@
-package com.sg.foundations.flowcontrol.utils;
+package com.sg.foundations.utils.utils;
 
 import java.util.Scanner;
 
