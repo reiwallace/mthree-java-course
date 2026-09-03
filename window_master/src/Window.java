@@ -1,6 +1,6 @@
 public class Window {
-    private static final double GLASS_COST_PER_SQ_FOOT = 3.5D;
-    private static final double TRIM_COST_PER_FOOT = 2.25D;
+    public static double glassCostPerSqFoot = 3.5D;
+    public static double trimCostPerFoot = 2.25D;
 
     private final double width;
     private final double height;
@@ -29,6 +29,13 @@ public class Window {
      * @return The total cost of the window and trim
      */
     public double getCost() {
-        return getPerimeter() * TRIM_COST_PER_FOOT + getArea() * GLASS_COST_PER_SQ_FOOT;
+        return getPerimeter() * trimCostPerFoot + getArea() * glassCostPerSqFoot;
+    }
+
+    public static void setGlassCost(double cost) {
+        glassCostPerSqFoot = cost;
+    }
+    public static void setTrimCost(double cost) {
+        trimCostPerFoot = cost;
     }
 }
