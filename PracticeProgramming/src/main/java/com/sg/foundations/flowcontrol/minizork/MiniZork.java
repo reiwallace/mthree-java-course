@@ -6,7 +6,7 @@ import com.sg.foundations.flowcontrol.minizork.location.GrassyField;
 import com.sg.foundations.flowcontrol.minizork.location.OakTree;
 import java.util.HashMap;
 import java.util.Map;
-import static com.sg.foundations.flowcontrol.minizork.location.LevelNames.*;
+import static com.sg.foundations.flowcontrol.minizork.consts.LevelNames.*;
 
 public class MiniZork {
     private static boolean running = true;

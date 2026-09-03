@@ -1,7 +1,7 @@
 package com.sg.foundations.flowcontrol.minizork.location;
 
 import com.sg.foundations.flowcontrol.minizork.MiniZork;
-import static com.sg.foundations.flowcontrol.minizork.location.LevelNames.*;
+import static com.sg.foundations.flowcontrol.minizork.consts.LevelNames.*;
 
 public class GrassyField extends AbstractLocation{
     public GrassyField() {

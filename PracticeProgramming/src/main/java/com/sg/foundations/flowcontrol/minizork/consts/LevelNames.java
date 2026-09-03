@@ -1,4 +1,4 @@
-package com.sg.foundations.flowcontrol.minizork.location;
+package com.sg.foundations.flowcontrol.minizork.consts;
 
 public enum LevelNames {
     FARMHOUSE("Farm House"),
