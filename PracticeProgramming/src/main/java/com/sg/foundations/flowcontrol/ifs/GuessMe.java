@@ -1,6 +1,6 @@
 package com.sg.foundations.flowcontrol.ifs;
 
-import com.sg.foundations.utils.utils.UserInputUtils;
+import com.sg.foundations.utils.UserInputUtils;
 
 public class GuessMe {
     private static final int NUM = 44;
