@@ -1,7 +1,10 @@
 # IGNORE INTELLIJ FILES
 **/.idea
 *.iml
+
+# IGNORE MAVEN FILES
 **/.mvn
+**/.xml
 
 # IGNORE JAVA OUTPUT FILES
 **/out
