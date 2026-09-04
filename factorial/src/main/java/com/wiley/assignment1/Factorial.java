@@ -69,6 +69,9 @@ public class Factorial {
 
 	 	// Loop starts from 2 as the result is already 1
 	 	// The result will be multiplied by all numbers from 2 up to the input number (including the input number)
+		for(int i = 2; i <= num; i++) {
+			result *= i;
+		}
 
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
