@@ -1,6 +1,6 @@
-package com.sg.foundations.flowcontrol.random;
+package com.mthree.academy.c458.flowcontrol.random;
 
-import com.sg.foundations.utils.UserInputUtils;
+import com.mthree.academy.c458.utils.UserInputUtils;
 
 import java.util.Random;
 

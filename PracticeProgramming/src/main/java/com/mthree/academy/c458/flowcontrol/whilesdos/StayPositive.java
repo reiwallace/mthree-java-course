@@ -1,10 +1,10 @@
-package com.sg.foundations.flowcontrol.whilesdos;
+package com.mthree.academy.c458.flowcontrol.whilesdos;
 
 
-import com.sg.foundations.utils.UserInputUtils;
+import com.mthree.academy.c458.utils.UserInputUtils;
 
-import static com.sg.foundations.utils.QuickOut.print;
-import static com.sg.foundations.utils.QuickOut.println;
+import static com.mthree.academy.c458.utils.QuickOut.print;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class StayPositive {
     public static void main(String[] args) {

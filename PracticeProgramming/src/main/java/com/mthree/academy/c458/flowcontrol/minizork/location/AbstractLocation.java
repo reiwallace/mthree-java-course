@@ -1,10 +1,10 @@
-package com.sg.foundations.flowcontrol.minizork.location;
+package com.mthree.academy.c458.flowcontrol.minizork.location;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import static com.sg.foundations.utils.QuickOut.println;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public abstract class AbstractLocation {
     private final Scanner input = new Scanner(System.in);

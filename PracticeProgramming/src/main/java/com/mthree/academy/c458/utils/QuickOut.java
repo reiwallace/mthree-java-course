@@ -1,4 +1,4 @@
-package com.sg.foundations.utils;
+package com.mthree.academy.c458.utils;
 
 public class QuickOut {
     /**

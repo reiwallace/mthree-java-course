@@ -1,7 +1,7 @@
-package com.sg.foundations.flowcontrol.ifs;
+package com.mthree.academy.c458.flowcontrol.ifs;
 
-import com.sg.foundations.utils.UserInputUtils;
-import static com.sg.foundations.utils.QuickOut.println;
+import com.mthree.academy.c458.utils.UserInputUtils;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class TriviaNight {
     public static void main(String[] args) {

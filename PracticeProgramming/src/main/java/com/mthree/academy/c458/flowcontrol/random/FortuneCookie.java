@@ -1,8 +1,8 @@
-package com.sg.foundations.flowcontrol.random;
+package com.mthree.academy.c458.flowcontrol.random;
 
 import java.util.Random;
 
-import static com.sg.foundations.utils.QuickOut.println;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class FortuneCookie {
     private static final String[] QUOTES = {

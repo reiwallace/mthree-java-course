@@ -1,12 +1,12 @@
-package com.sg.foundations.flowcontrol.minizork;
+package com.mthree.academy.c458.flowcontrol.minizork;
 
-import com.sg.foundations.flowcontrol.minizork.location.AbstractLocation;
-import com.sg.foundations.flowcontrol.minizork.location.FarmHouse;
-import com.sg.foundations.flowcontrol.minizork.location.GrassyField;
-import com.sg.foundations.flowcontrol.minizork.location.OakTree;
+import com.mthree.academy.c458.flowcontrol.minizork.location.AbstractLocation;
+import com.mthree.academy.c458.flowcontrol.minizork.location.FarmHouse;
+import com.mthree.academy.c458.flowcontrol.minizork.location.GrassyField;
+import com.mthree.academy.c458.flowcontrol.minizork.location.OakTree;
 import java.util.HashMap;
 import java.util.Map;
-import static com.sg.foundations.flowcontrol.minizork.consts.LevelNames.*;
+import static com.mthree.academy.c458.flowcontrol.minizork.consts.LevelNames.*;
 
 public class MiniZork {
     private static boolean running = true;

@@ -1,7 +1,7 @@
-package com.sg.foundations.flowcontrol.fors;
+package com.mthree.academy.c458.flowcontrol.fors;
 
-import static com.sg.foundations.utils.QuickOut.println;
-import static com.sg.foundations.utils.UserInputUtils.retrieveIntegerInput;
+import static com.mthree.academy.c458.utils.QuickOut.println;
+import static com.mthree.academy.c458.utils.UserInputUtils.retrieveIntegerInput;
 
 public class FizzBuzz {
     public static void main(String[] args) {

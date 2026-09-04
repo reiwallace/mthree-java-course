@@ -1,6 +1,6 @@
-package com.sg.foundations.flowcontrol.ifs;
+package com.mthree.academy.c458.flowcontrol.ifs;
 
-import com.sg.foundations.utils.UserInputUtils;
+import com.mthree.academy.c458.utils.UserInputUtils;
 
 public class BirthStones {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package com.sg.foundations.flowcontrol.whilesdos;
+package com.mthree.academy.c458.flowcontrol.whilesdos;
 
-import static com.sg.foundations.utils.QuickOut.println;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class LazyTeenager {
     public static void main(String[] args) {

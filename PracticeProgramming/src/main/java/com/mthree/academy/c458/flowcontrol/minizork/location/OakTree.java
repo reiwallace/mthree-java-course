@@ -1,8 +1,8 @@
-package com.sg.foundations.flowcontrol.minizork.location;
+package com.mthree.academy.c458.flowcontrol.minizork.location;
 
-import com.sg.foundations.flowcontrol.minizork.MiniZork;
-import static com.sg.foundations.flowcontrol.minizork.consts.LevelNames.*;
-import static com.sg.foundations.utils.QuickOut.println;
+import com.mthree.academy.c458.flowcontrol.minizork.MiniZork;
+import static com.mthree.academy.c458.flowcontrol.minizork.consts.LevelNames.*;
+import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class OakTree extends AbstractLocation{
     public OakTree() {
