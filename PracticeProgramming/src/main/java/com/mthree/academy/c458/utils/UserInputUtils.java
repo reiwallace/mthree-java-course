@@ -63,6 +63,36 @@ public class UserInputUtils {
     }
 
     /**
+     * Attempts to retrieve and parse integer input from System, only accepting positive values
+     * @return User inputted value
+     */
+    public static int retrievePositiveIntegerInput() {
+        String inputVal;
+
+        // Loop up to set number of attempts before returning 0
+        for(int i = 1; i <= maxInputAttempts; i++) {
+            inputVal = INPUT.nextLine();
+            // Attempt to parse the value - Inform user if fail
+            try {
+                int val = Integer.parseInt(inputVal);
+                // Reject values outside the range
+                if(val < 0) {
+                    System.out.println("Negative values not accepted. Please try again.");
+                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+                } else {
+                    return val;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number format (e.g. 0, 1, 2000). Please try again.");
+                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+            }
+        }
+        System.out.println("Max attempts exceeded.");
+        System.exit(1);
+        return 1;
+    }
+
+    /**
      * Attempts to retrieve and parse Double input from System.In
      * @return User inputted value
      */
@@ -81,6 +111,29 @@ public class UserInputUtils {
                 } else {
                     return val;
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01, -50.0). Please try again.");
+                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+            }
+        }
+        System.out.println("Max attempts exceeded.");
+        System.exit(1);
+        return 1;
+    }
+
+    /**
+     * Attempts to retrieve and parse Double input from System.In
+     * @return User inputted value
+     */
+    public static double retrievePositiveDoubleInput() {
+        String inputVal;
+
+        // Loop up to set number of attempts before returning 0
+        for(int i = 1; i <= maxInputAttempts; i++) {
+            inputVal = INPUT.nextLine();
+            // Attempt to parse the value - Inform user if fail
+            try {
+                return Double.parseDouble(inputVal);
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01). Please try again.");
                 System.out.println("Attempts remaining: " + (maxInputAttempts - i));
