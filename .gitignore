@@ -4,7 +4,8 @@
 
 # IGNORE MAVEN FILES
 **/.mvn
-**/.xml
+**.xml
 
 # IGNORE JAVA OUTPUT FILES
 **/out
+**.class
