@@ -18,13 +18,7 @@ public class UserInputUtils {
             inputVal = INPUT.nextLine();
             // Attempt to parse the value - Inform user if fail
             try {
-                int val = Integer.parseInt(inputVal);
-                if(val < 0) {
-                    System.out.println("Negative values not accepted. Please try again.");
-                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-                } else {
-                    return val;
-                }
+                return Integer.parseInt(inputVal);
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format (e.g. 0, 1, -5, 2000). Please try again.");
                 System.out.println("Attempts remaining: " + (maxInputAttempts - i));
