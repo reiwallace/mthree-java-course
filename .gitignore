@@ -2,9 +2,9 @@
 **/.idea
 *.iml
 
-# IGNORE MAVEN FILES
+# IGNORE MAVEN OUTPUT FILES
 **/.mvn
-**.xml
+
 
 # IGNORE JAVA OUTPUT FILES
 **/out
