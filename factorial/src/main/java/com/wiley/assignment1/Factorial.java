@@ -34,8 +34,22 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
+		try {
+			// Read user input from the scanner and try to parse it into an integer
+			int num = Integer.parseInt(scanner.nextLine());
 
+			// If the number is between integer 1 and 10 return the number
+			// Since the number is returned here, the default return of -1 and the error message are never reached.
+			if(num >= 1 && num <= 10) {
+				return num;
+			}
+
+		} catch (NumberFormatException ignored) {} // Ignore catch as the default return handles exceptions
+
+	 	// Default return - prints out an error and returns -1
+		printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
 		return -1;
+
 		//YOUR CODE ENDS HERE
 		 
 			
