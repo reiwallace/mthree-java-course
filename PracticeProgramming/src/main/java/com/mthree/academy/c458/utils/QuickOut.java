@@ -9,5 +9,9 @@ public class QuickOut {
         System.out.println(line);
     }
 
+    /**
+     * Shorthand for System.out.print();
+     * @param text Text input to print
+     */
     public static void print(String text) { System.out.print(text); }
 }
