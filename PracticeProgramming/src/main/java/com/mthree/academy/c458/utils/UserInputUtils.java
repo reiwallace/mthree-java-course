@@ -104,13 +104,7 @@ public class UserInputUtils {
             inputVal = INPUT.nextLine();
             // Attempt to parse the value - Inform user if fail
             try {
-                double val = Double.parseDouble(inputVal);
-                if(val < 0) {
-                    System.out.println("Negative values not accepted. Please try again.");
-                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-                } else {
-                    return val;
-                }
+                return Double.parseDouble(inputVal);
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01, -50.0). Please try again.");
                 System.out.println("Attempts remaining: " + (maxInputAttempts - i));
@@ -133,7 +127,13 @@ public class UserInputUtils {
             inputVal = INPUT.nextLine();
             // Attempt to parse the value - Inform user if fail
             try {
-                return Double.parseDouble(inputVal);
+                double val = Double.parseDouble(inputVal);
+                if(val < 0) {
+                    System.out.println("Negative values not accepted. Please try again.");
+                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+                } else {
+                    return val;
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01). Please try again.");
                 System.out.println("Attempts remaining: " + (maxInputAttempts - i));
