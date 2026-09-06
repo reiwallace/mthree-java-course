@@ -36,7 +36,7 @@ public class Factorial {
 		//YOUR CODE STARTS HERE
 		try {
 			// Read user input from the scanner and try to parse it into an integer
-			int num = Integer.parseInt(scanner.nextLine());
+			num = Integer.parseInt(scanner.nextLine());
 
 			// If the number is between integer 1 and 10 return the number
 			// Since the number is returned here, the default return of -1 and the error message are never reached.
