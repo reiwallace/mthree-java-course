@@ -41,6 +41,7 @@ public class Factorial {
 			// If the number is between integer 1 and 10 return the number
 			// Since the number is returned here, the default return of -1 and the error message are never reached.
 			if(num >= 1 && num <= 10) {
+				printStream.println("You entered: " + num);
 				return num;
 			}
 
@@ -74,7 +75,7 @@ public class Factorial {
 		}
 
 		//YOUR CODE ENDS HERE
-		this.printStream.print("The Factorial is: " + result);		
+		this.printStream.print("The Factorial is: " + result);
 		
 	 }
 	 
