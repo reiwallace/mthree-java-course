@@ -34,6 +34,7 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
+	 	// Try Catch to validate and give feedback on user input rather than throwing an exception
 		try {
 			// Read user input from the scanner and try to parse it into an integer
 			num = Integer.parseInt(scanner.nextLine());
