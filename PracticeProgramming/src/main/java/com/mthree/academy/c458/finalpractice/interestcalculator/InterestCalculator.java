@@ -1,9 +1,6 @@
 package com.mthree.academy.c458.finalpractice.interestcalculator;
 
 import com.mthree.academy.c458.utils.UserInputUtils;
-
-import java.util.Locale;
-
 import static com.mthree.academy.c458.utils.QuickOut.println;
 
 public class InterestCalculator {
