@@ -5,91 +5,89 @@ import java.util.Scanner;
 public class UserInputUtils {
     private static int maxInputAttempts = 3;
     private static final Scanner INPUT = new Scanner(System.in);
+    
+    private static int currentRemainingAttempts = maxInputAttempts;
 
     /**
      * Attempts to retrieve and parse integer input from System.In
-     * @return User inputted value
+     * @param format format to print upon invalid input
+     * @return valid integer
      */
-    public static int retrieveIntegerInput() {
-        String inputVal;
-
-        // Loop up to set number of attempts before returning 0
-        for(int i = 1; i <= maxInputAttempts; i++) {
-            inputVal = INPUT.nextLine();
-            // Attempt to parse the value - Inform user if fail
+    private static int tryRetrieveInt(String format) {
+        while(currentRemainingAttempts > 0) {
             try {
-                return Integer.parseInt(inputVal);
+                return Integer.parseInt(INPUT.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Invalid number format (e.g. 0, 1, -5, 2000). Please try again.");
-                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+                System.out.println("Invalid number format (e.g. " + format + "). Please try again.");
+                decrementAttempts();
             }
         }
-        System.out.println("Max attempts exceeded.");
-        System.exit(1);
-        return 1;
+        return exceedMaxAttempts();
     }
 
     /**
-     * Attempts to retrieve and parse integer input from System, within a specified range
+     * Attempts to retrieve and parse integer input from System.In
+     * @return User inputted integer
+     */
+    public static int retrieveIntegerInput() {
+        resetInputAttempts();
+        return tryRetrieveInt("0, 1, -5, 2000");
+    }
+
+    /**
+     * Attempts to retrieve integer input from System, within a specified range
      * (INCLUDES MIN AND MAX)
      * @param min Minimum value to retrieve (inclusive)
      * @param max Maximum value to retrieve (inclusive)
      * @return User inputted value
      */
     public static int retrieveIntegerInputInRange(int min, int max) {
-        String inputVal;
-
-        // Loop up to set number of attempts before returning 0
-        for(int i = 1; i <= maxInputAttempts; i++) {
-            inputVal = INPUT.nextLine();
-            // Attempt to parse the value - Inform user if fail
-            try {
-                int val = Integer.parseInt(inputVal);
-                // Reject values outside the range
-                if(val < min || val > max) {
-                    System.out.println("Value must be between " + min + " and " + max + ". Please try again.");
-                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-                } else {
-                    return val;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number format (e.g. 0, 1, -5, 2000). Please try again.");
-                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+        resetInputAttempts();
+        while(currentRemainingAttempts > 0) {
+            int num = tryRetrieveInt("0, 1, -5, 2000");
+            if(num < min || num > max) {
+                System.out.println("Value must be between " + min + " and " + max + ". Please try again.");
+                decrementAttempts();
+            } else {
+                return num;
             }
         }
-        System.out.println("Max attempts exceeded.");
-        System.exit(1);
-        return 1;
+        return exceedMaxAttempts();
     }
 
     /**
-     * Attempts to retrieve and parse integer input from System, only accepting positive values
+     * Attempts to retrieve an integer input from System, only accepting positive values
      * @return User inputted value
      */
     public static int retrievePositiveIntegerInput() {
-        String inputVal;
-
-        // Loop up to set number of attempts before returning 0
-        for(int i = 1; i <= maxInputAttempts; i++) {
-            inputVal = INPUT.nextLine();
-            // Attempt to parse the value - Inform user if fail
-            try {
-                int val = Integer.parseInt(inputVal);
-                // Reject values outside the range
-                if(val < 0) {
-                    System.out.println("Negative values not accepted. Please try again.");
-                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-                } else {
-                    return val;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number format (e.g. 0, 1, 2000). Please try again.");
-                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+        resetInputAttempts();
+        while(currentRemainingAttempts > 0) {
+            int num = tryRetrieveInt("0, 1, 2000");
+            if(num < 0) {
+                System.out.println("Negative values not allowed. Please try again.");
+                decrementAttempts();
+            } else {
+                return num;
             }
         }
-        System.out.println("Max attempts exceeded.");
-        System.exit(1);
-        return 1;
+        return exceedMaxAttempts();
+    }
+
+    /**
+     * Attempts to parse double from input value, decrementing attempts
+     * @param format format to print upon invalid number
+     * @return valid Double
+     */
+    private static double tryRetrieveDouble(String format) {
+        while(currentRemainingAttempts > 0) {
+            try {
+                return Double.parseDouble(INPUT.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number format (e.g. " + format + "). Please try again.");
+                decrementAttempts();
+            }
+        }
+        return exceedMaxAttempts();
     }
 
     /**
@@ -97,22 +95,8 @@ public class UserInputUtils {
      * @return User inputted value
      */
     public static double retrieveDoubleInput() {
-        String inputVal;
-
-        // Loop up to set number of attempts before returning 0
-        for(int i = 1; i <= maxInputAttempts; i++) {
-            inputVal = INPUT.nextLine();
-            // Attempt to parse the value - Inform user if fail
-            try {
-                return Double.parseDouble(inputVal);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01, -50.0). Please try again.");
-                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-            }
-        }
-        System.out.println("Max attempts exceeded.");
-        System.exit(1);
-        return 1;
+        resetInputAttempts();
+        return tryRetrieveDouble("0, 1.25, 2000.01, -50.0");
     }
 
     /**
@@ -120,28 +104,17 @@ public class UserInputUtils {
      * @return User inputted value
      */
     public static double retrievePositiveDoubleInput() {
-        String inputVal;
-
-        // Loop up to set number of attempts before returning 0
-        for(int i = 1; i <= maxInputAttempts; i++) {
-            inputVal = INPUT.nextLine();
-            // Attempt to parse the value - Inform user if fail
-            try {
-                double val = Double.parseDouble(inputVal);
-                if(val < 0) {
-                    System.out.println("Negative values not accepted. Please try again.");
-                    System.out.println("Attempts remaining: " + (maxInputAttempts - i));
-                } else {
-                    return val;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number format (e.g. 0, 1.25, 2000.01). Please try again.");
-                System.out.println("Attempts remaining: " + (maxInputAttempts - i));
+        resetInputAttempts();
+        while(currentRemainingAttempts > 0) {
+            double num = tryRetrieveDouble("0, 1, 2000");
+            if(num < 0) {
+                System.out.println("Negative values not allowed. Please try again.");
+                decrementAttempts();
+            } else {
+                return num;
             }
         }
-        System.out.println("Max attempts exceeded.");
-        System.exit(1);
-        return 1;
+        return exceedMaxAttempts();
     }
 
     /**
@@ -166,4 +139,29 @@ public class UserInputUtils {
      * @param amount max attempts
      */
     public static void setInputAttempts(int amount) { maxInputAttempts = amount; }
+
+    /**
+     * Resets current input attempts to max input attempts
+     */
+    private static void resetInputAttempts() {
+        currentRemainingAttempts = maxInputAttempts;
+    }
+
+    /**
+     * Decrements input attempts and outputs this to the user
+     */
+    private static void decrementAttempts() {
+        currentRemainingAttempts -= 1;
+        System.out.println("Attempts remaining: " + currentRemainingAttempts);
+    }
+
+    /**
+     * Outputs that the max attempts have been reached and exits the program
+     * @return exit code
+     */
+    private static int exceedMaxAttempts() {
+        System.out.println("Max attempts exceeded.");
+        System.exit(1);
+        return 1;
+    }
 }
