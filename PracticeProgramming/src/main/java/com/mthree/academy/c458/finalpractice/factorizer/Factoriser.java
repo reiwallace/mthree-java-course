@@ -8,6 +8,10 @@ import static com.mthree.academy.c458.utils.QuickOut.print;
 
 public class Factoriser {
     public static void main(String[] args) {
+        new Factoriser();
+    }
+    
+    public Factoriser() {
         // Prompt for number
         println("What number would you like to factor?");
         int num = UserInputUtils.retrieveIntegerInput();
@@ -20,7 +24,6 @@ public class Factoriser {
         println("\n" + num + " has " + factors.size() + " factors.");
         println(num + " is " + (perfect ? "" : "not ") + "a perfect number.");
         println(num + " is " + (prime ? "" : "not ") + "a prime number.");
-
     }
 
     private static boolean isPrime(Set<Integer> factors) {
