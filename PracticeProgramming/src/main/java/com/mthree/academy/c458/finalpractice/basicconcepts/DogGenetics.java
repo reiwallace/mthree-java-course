@@ -1,10 +1,6 @@
 package com.mthree.academy.c458.finalpractice.basicconcepts;
 
 import com.mthree.academy.c458.utils.UserInputUtils;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import static com.mthree.academy.c458.utils.QuickOut.println;
