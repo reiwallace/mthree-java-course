@@ -4,7 +4,7 @@
 
 # IGNORE MAVEN OUTPUT FILES
 **/.mvn
-
+**/target
 
 # IGNORE JAVA OUTPUT FILES
 **/out
