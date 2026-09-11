@@ -1,0 +1,4 @@
+Alabama::Montgomery
+Alaska::Juneau
+Arizona::Phoenix
+Arkansas::Little Rock
