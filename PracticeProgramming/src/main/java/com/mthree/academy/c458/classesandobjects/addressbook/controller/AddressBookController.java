@@ -1,15 +1,16 @@
 package com.mthree.academy.c458.classesandobjects.addressbook.controller;
 
+import com.mthree.academy.c458.classesandobjects.addressbook.consts.EditOption;
 import com.mthree.academy.c458.classesandobjects.addressbook.dao.AddressBookDao;
 import com.mthree.academy.c458.classesandobjects.addressbook.dto.Address;
 import com.mthree.academy.c458.classesandobjects.addressbook.ui.AddressBookView;
-import com.mthree.academy.c458.classesandobjects.addressbook.enums.MenuOption;
-import java.util.Collection;
+import com.mthree.academy.c458.classesandobjects.addressbook.consts.MenuOption;
 
 public class AddressBookController {
     private AddressBookView view;
     private AddressBookDao dao;
     private boolean running = false;
+    private boolean editMenuRunning = false;
 
     public AddressBookController() {}
     /**
@@ -44,6 +45,10 @@ public class AddressBookController {
                     findAddress();
                     break;
 
+                case EDIT_ADDRESS:
+                    editAddress();
+                    break;
+
                 case GET_ADDRESS_COUNT:
                     getAddressCount();
                     break;
@@ -64,6 +69,7 @@ public class AddressBookController {
     private void addAddress() {
         // Get new address and it through the dao
         Address newAddress = view.getNewAddress();
+        dao.addAddress(newAddress.getSurname(), newAddress);
         view.addAddressSuccess();
     }
 
@@ -97,6 +103,46 @@ public class AddressBookController {
         // View appropriate response
         if(searchSuccess) {
             view.findAddressSuccess(foundAddress);
+        } else {
+            view.findAddressFail();
+        }
+    }
+
+    private void editAddress() {
+        // Get address surname from user then use that to grab from dao
+        String toFindSurname = view.findAddress();
+        Address address = dao.getAddressBySurname(toFindSurname);
+
+        // Check if address is null
+        boolean searchSuccess = address != null;
+
+        // View appropriate response
+        if(searchSuccess) {
+            editMenuRunning = true;
+
+            while(editMenuRunning) {
+                view.viewEditAddressMenu(address);
+                EditOption option = view.getEditMenuChoice();
+                String newValue = view.getNewField(option);
+
+                switch(option) {
+                    case EDIT_FIRSTNAME:
+                        address.setFirstname(newValue);
+                        break;
+
+                    case EDIT_SURNAME:
+                        address.setSurname(newValue);
+                        break;
+
+                    case EDIT_ADDRESS:
+                        address.setAddress(newValue);
+                        break;
+
+                    case EXIT:
+                        editMenuRunning = false;
+                        break;
+                }
+            }
         } else {
             view.findAddressFail();
         }

@@ -27,4 +27,12 @@ public class Address {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 }

@@ -1,4 +1,4 @@
-package com.mthree.academy.c458.classesandobjects.addressbook.enums;
+package com.mthree.academy.c458.classesandobjects.addressbook.consts;
 
 public enum MenuOption {
     ADD_ADDRESS,
@@ -6,6 +6,7 @@ public enum MenuOption {
     GET_ADDRESS_BY_SURNAME,
     GET_ADDRESS_COUNT,
     GET_ALL_ADDRESS,
+    EDIT_ADDRESS,
     EXIT;
 
     public static MenuOption getFromInt(int x) {
@@ -17,10 +18,12 @@ public enum MenuOption {
             case 3:
                 return GET_ADDRESS_BY_SURNAME;
             case 4:
-                return GET_ADDRESS_COUNT;
+                return EDIT_ADDRESS;
             case 5:
-                return GET_ALL_ADDRESS;
+                return GET_ADDRESS_COUNT;
             case 6:
+                return GET_ALL_ADDRESS;
+            case 7:
                 return EXIT;
             default:
                 return null;
